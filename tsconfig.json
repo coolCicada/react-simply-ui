@@ -1,24 +1,25 @@
 {
   "compilerOptions": {
-    "declaration": true, // 开启声明文件的生成
-    "emitDeclarationOnly": true, // 仅输出声明文件
-    "outDir": "dist", // 声明文件输出目录
-    "jsx": "react-jsx", // 适用于 React 17+
-    "module": "esnext",
-    "target": "es5",
-    "moduleResolution": "node",
-
-    /* Bundler mode */
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "target": "ES6",                          // 设置编译后的 ECMAScript 版本
+    "module": "ESNext",                        // 使用的模块系统，这里选择 ESNext
+    "jsx": "react-jsx",                        // 使 TypeScript 处理 JSX 语法
+    "strict": true,                            // 启用所有严格的类型检查选项
+    "esModuleInterop": true,                   // 启用 ECMAScript 模块与 CommonJS 模块之间的互操作性
+    "skipLibCheck": true,                      // 跳过类型声明文件的检查
+    "forceConsistentCasingInFileNames": true,  // 强制文件名大小写一致
+    "moduleResolution": "node",                // 使用 Node.js 的模块解析逻辑
+    "resolveJsonModule": true,                 // 允许导入 JSON 文件
+    "isolatedModules": true,                   // 强制每个文件是单独的模块
+    "allowSyntheticDefaultImports": true,      // 允许使用默认导入语法
+    "noImplicitAny": false,                    // 禁止隐式的 `any` 类型
+    "baseUrl": "./src",  
+    "outDir": "./dist/src",                       // 设置项目的根目录
+    "declaration": true,           // 生成声明文件
+    "declarationDir": "./dist/src",   // 指定声明文件输出目录
+    "paths": {                                 // 自定义路径别名
+      "@components/*": ["components/*"]
+    }
   },
-  "include": ["src"]
+  "include": ["src/**/*"],                     // 指定包含的文件和文件夹，通常是 `src` 目录
+  "exclude": ["node_modules", "**/*.test.ts", "dist"] // 排除测试文件和打包后的输出文件
 }

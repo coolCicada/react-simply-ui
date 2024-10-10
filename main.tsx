@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client';
-import { Button } from './index';
+import { Button } from './src/index';
+import React from 'react';
 
 // 获取 DOM 元素
 const rootElement = document.getElementById('app')!;
