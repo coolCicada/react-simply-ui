@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "declaration": true, // 开启声明文件的生成
+    "emitDeclarationOnly": true, // 仅输出声明文件
+    "outDir": "dist", // 声明文件输出目录
+    "jsx": "react-jsx", // 适用于 React 17+
+    "module": "esnext",
+    "target": "es5",
+    "moduleResolution": "node",
+
+    /* Bundler mode */
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"]
+}

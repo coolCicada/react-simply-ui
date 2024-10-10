@@ -1,0 +1,28 @@
+.tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.tag:hover {
+    background-color: #0056b3;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.close-btn:hover {
+    opacity: 0.7;
+}
