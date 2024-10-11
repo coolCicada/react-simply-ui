@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
+import { useState } from 'react';
 
-import { Button } from './Button';
+import Button from 'react-simply-ui/dist/es/Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -39,9 +40,9 @@ export const Big: Story = {
   },
 };
 
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button',
-  },
+export const Small = {
+  render: (args) => {
+    const [label, setLabel] = useState('init');
+    return <Button label={label} onClick={() => setLabel(new Date().getDate().toLocaleString())} />
+  }
 };
