@@ -10,11 +10,9 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build:es": "tsc && node ./scripts/build-less.js && node ./scripts/update-import.js",
+    "build": "vite build",
     "build:ui": "pnpm --filter react-simply-ui run build",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "preview": "vite preview"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
@@ -44,8 +42,11 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "react-simply-ui": "*",
     "@vitejs/plugin-react": "^4.3.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "react-simply-ui": "*",
+    "tailwindcss": "^3.4.13",
     "vite-plugin-dts": "^4.2.3",
     "vite-plugin-static-copy": "^2.0.0"
   }
