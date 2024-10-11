@@ -1,5 +1,5 @@
 {
-  "name": "react-simply-ui",
+  "name": "library-test",
   "version": "0.0.7",
   "main": "dist/umd/index.js",
   "module": "dist/es/index.js",
@@ -11,10 +11,21 @@
   "scripts": {
     "dev": "vite",
     "build:es": "tsc && node ./scripts/build-less.js && node ./scripts/update-import.js",
-    "build": "vite build && npm run build:es",
-    "preview": "vite preview"
+    "build:ui": "pnpm --filter react-simply-ui run build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-interactions": "^8.3.5",
+    "@storybook/addon-links": "^8.3.5",
+    "@storybook/addon-onboarding": "^8.3.5",
+    "@storybook/blocks": "^8.3.5",
+    "@storybook/react": "^8.3.5",
+    "@storybook/react-vite": "^8.3.5",
+    "@storybook/test": "^8.3.5",
     "@types/node": "^20.16.11",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
@@ -22,6 +33,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "rollup-plugin-copy": "^3.5.0",
+    "storybook": "^8.3.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3",
     "vite": "^5.4.8",
@@ -32,6 +44,7 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
+    "react-simply-ui": "*",
     "@vitejs/plugin-react": "^4.3.2",
     "vite-plugin-dts": "^4.2.3",
     "vite-plugin-static-copy": "^2.0.0"

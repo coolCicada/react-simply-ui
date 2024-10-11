@@ -1,0 +1,2 @@
+packages:
+  - 'packages/*'  # 指定你的包所在目录
