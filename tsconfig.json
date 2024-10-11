@@ -13,9 +13,9 @@
     "allowSyntheticDefaultImports": true,      // 允许使用默认导入语法
     "noImplicitAny": false,                    // 禁止隐式的 `any` 类型
     "baseUrl": "./src",  
-    "outDir": "./dist/src",                       // 设置项目的根目录
+    "outDir": "./dist/es",                       // 设置项目的根目录
     "declaration": true,           // 生成声明文件
-    "declarationDir": "./dist/src",   // 指定声明文件输出目录
+    "declarationDir": "./dist/es",   // 指定声明文件输出目录
     "paths": {                                 // 自定义路径别名
       "@components/*": ["components/*"]
     }

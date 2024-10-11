@@ -1,4 +1,4 @@
-import './index.css'; // 引入样式文件
+import './index.less'; // 引入样式文件
 
 interface ButtonProps {
   label: string;
