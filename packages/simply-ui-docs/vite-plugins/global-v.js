@@ -35,7 +35,7 @@ export default function injectGlobalVariablePlugin(src) {
     return {
         name: 'vite:inject-global-variable',
         renderChunk(code) {
-            const globalVariableCode = `window.componentSource = ${JSON.stringify(getContent(), null, 2)};`;
+            const globalVariableCode = `globalThis.componentSource = ${JSON.stringify(getContent(), null, 2)};`;
             return `${globalVariableCode}\n${code}`;
         },
     };

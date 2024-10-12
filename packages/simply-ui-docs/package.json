@@ -1,6 +1,6 @@
 {
   "name": "simply-ui-docs",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "main": "dist/umd/index.js",
   "module": "dist/es/index.js",
   "types": "dist/es/index.d.ts",
@@ -12,8 +12,7 @@
     "example": "example"
   },
   "scripts": {
-    "build:es": "tsc && node ../../scripts/build-less.js && node ../../scripts/update-import.js",
-    "build": "vite build"
+    "build": "vite build && tsc"
   },
   "author": "",
   "license": "ISC",

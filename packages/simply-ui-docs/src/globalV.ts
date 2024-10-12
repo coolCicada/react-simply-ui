@@ -1,1 +1,1 @@
-export const componentSource = window.componentSource;
+export const componentSource = globalThis.componentSource;

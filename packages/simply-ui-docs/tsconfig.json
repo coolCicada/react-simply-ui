@@ -2,6 +2,7 @@
   "compilerOptions": {
     "types": ["vite/client"],
     "lib": ["es2017", "dom"],
+    "emitDeclarationOnly": true,
     "target": "ES6",                          // 设置编译后的 ECMAScript 版本
     "module": "ESNext",                        // 使用的模块系统，这里选择 ESNext
     "jsx": "react-jsx",                        // 使 TypeScript 处理 JSX 语法
