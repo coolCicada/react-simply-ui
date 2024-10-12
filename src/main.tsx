@@ -1,12 +1,13 @@
 import { createRoot } from 'react-dom/client';
-import DOC from './docs-project/example';
+import DOC from 'simply-ui-docs';
+import 'simply-ui-docs/dist/style.css';
 import './main.less';
 
 const App = () => {
     return (
-        <>
+        <div className='bg-slate-100'>
             <DOC />
-        </>
+        </div>
     )
 }
 

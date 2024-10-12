@@ -1,18 +1,9 @@
-import { useEffect, useState } from "react";
+import { componentSource as source } from './globalV';
+import './index.less';
 
 const components = import.meta.glob('./**/*.tsx', { eager: true });
 
 const ComponentRenderer = () => {
-    const [source, setSource] = useState({});
-    useEffect(() => {
-        async function getComponentSource() {
-            const res = await fetch('./component-sources.json');
-            const json = await res.json();
-            setSource(json);
-        }
-        getComponentSource();
-        
-    }, []);
     return (
         <div>
             {Object.entries(components).map(([path, module]: any) => {
