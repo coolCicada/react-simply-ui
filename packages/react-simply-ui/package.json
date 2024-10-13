@@ -9,6 +9,7 @@
     "dist"
   ],
   "scripts": {
+    "dev": "vite",
     "build:es": "tsc && node ../../scripts/build-less.js && node ../../scripts/update-import.js",
     "build": "vite build && npm run build:es"
   },
