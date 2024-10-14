@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     reads(path.resolve() + '/src'),
-    globalV(path.resolve() + '/src')
+    globalV(path.resolve() + '/src/components')
   ],
   build: {
     outDir: "dist", // 指定输出目录

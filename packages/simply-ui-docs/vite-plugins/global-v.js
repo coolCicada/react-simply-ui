@@ -4,33 +4,37 @@ import path from 'path';
 export default function injectGlobalVariablePlugin(src) {
     function getContent() {
         const componentsDir = path.resolve(__dirname, src);
-        const sources = {};
 
         // 递归读取目录中的所有文件
         const readDirectory = (dir) => {
-            const key = '.' + dir.split(src)[1];
+            const sources = [];
+            const key = dir.split(src)[1];
             const files = fs.readdirSync(dir);
             files.forEach((file) => {
+                let source = { name: file, key };
                 const filePath = path.join(dir, file);
                 const stat = fs.statSync(filePath);
                 if (stat.isDirectory()) {
                     // 如果是目录，递归调用
-                    readDirectory(filePath);
+                    source.type = 'dir';
+                    source.children = readDirectory(filePath);
                 } else if (file.endsWith('.tsx')) { // 只读取 .tsx 文件
-                    const origin = sources[key];
                     const content = fs.readFileSync(filePath, 'utf-8');
-                    sources[key] = { ...origin, content };
+                    source.type = 'tsx';
+                    source.content = content;
                 } else if (file.endsWith('.json')) {
-                    const v = sources[key];
-                    const meta = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-                    sources[key] = { ...v, meta };
+                    const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+                    source.type = 'json';
+                    source.content = content;
+                } else {
+                    source = null;
                 }
+                if (source) sources.push(source);
             });
+            return sources;
         };
 
-        readDirectory(componentsDir);
-
-        return sources;
+        return readDirectory(componentsDir);
     }
     return {
         name: 'vite:inject-global-variable',
@@ -39,6 +43,7 @@ export default function injectGlobalVariablePlugin(src) {
             const globalVariableCode = `globalThis.componentSource = ${JSON.stringify(getContent(), null, 2)};`;
             return `${globalVariableCode}\n${code}`;
         },
+        // dev环境注册到 html 里
         transformIndexHtml(html) {
             // 定义你想注入的全局变量
             const globalVariableCode = `<script>

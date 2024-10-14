@@ -1,24 +1,32 @@
 import { componentSource as source } from './globalV';
 import './index.less';
-
-const components = import.meta.glob('./**/*.tsx', { eager: true });
+const PRE_FIX = './components';
+const components = import.meta.glob(`./components/**/*.tsx`, { eager: true });
 
 const ComponentRenderer = () => {
+    const generateChildren = (sources, deep) => {
+        return sources?.map(item => {
+            if (item.type === 'dir') {
+                return (
+                    <div>
+                        {generateChildren(item.children, deep + 1)}
+                    </div>
+                )
+            } else if (item.type === 'tsx') {
+                const path = PRE_FIX + item.key + '/' + item.name;
+                const Component = (components[path] as any)?.default;
+                return (
+                    <div>
+                        {<Component />}
+                        <div className="whitespace-pre-wrap bg-slate-200 p-4 border my-2">{item.content}</div>
+                    </div>
+                )
+            }
+        })
+    }
     return (
         <div>
-            {Object.entries(components).map(([path, module]: any) => {
-                const Component = module.default;
-                const key = path.slice(0, path.lastIndexOf('/'));
-                return (
-                    <div key={key} className="p-5">
-                        {source?.[key]?.meta?.name}
-                        <div className="p-4 my-4 border">
-                            <Component />
-                        </div>
-                        <div className="whitespace-pre-wrap bg-slate-200 p-4 border">{source?.[key]?.content}</div>
-                    </div>
-                );
-            })}
+            {generateChildren(source, 1)}
         </div>
     );
 };
