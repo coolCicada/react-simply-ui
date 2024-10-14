@@ -11,11 +11,11 @@ const ComponentRenderer = () => {
                 const key = path.slice(0, path.lastIndexOf('/'));
                 return (
                     <div key={key} className="p-5">
-                        {source[key]?.meta?.name}
+                        {source?.[key]?.meta?.name}
                         <div className="p-4 my-4 border">
                             <Component />
                         </div>
-                        <div className="whitespace-pre-wrap bg-slate-200 p-4 border">{source[key]?.content}</div>
+                        <div className="whitespace-pre-wrap bg-slate-200 p-4 border">{source?.[key]?.content}</div>
                     </div>
                 );
             })}

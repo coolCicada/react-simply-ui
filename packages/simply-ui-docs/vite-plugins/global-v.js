@@ -34,9 +34,25 @@ export default function injectGlobalVariablePlugin(src) {
     }
     return {
         name: 'vite:inject-global-variable',
+        // 生产环境注入
         renderChunk(code) {
             const globalVariableCode = `globalThis.componentSource = ${JSON.stringify(getContent(), null, 2)};`;
             return `${globalVariableCode}\n${code}`;
+        },
+        // configResolved(config) {
+        //     // 开发环境下设定标志位
+        //     if (config.command === 'serve') {
+        //         isInjected = false;
+        //     }
+        // },
+        transform(code, id) {
+            // 只注入到你需要的模块中，或者可以添加其他条件过滤
+            if (id.endsWith('.tsx')) {
+                console.log('transform', id);
+                const globalVariableCode = `globalThis.componentSource = ${JSON.stringify(getContent(), null, 2)};\n`;
+                return `${globalVariableCode}${code}`;
+            }
+            return code;
         },
     };
 }

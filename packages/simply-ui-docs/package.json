@@ -12,7 +12,8 @@
     "example": "example"
   },
   "scripts": {
-    "build": "vite build && tsc"
+    "build": "vite build && tsc",
+    "dev": "vite dev"
   },
   "author": "",
   "license": "ISC",

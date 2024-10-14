@@ -23,6 +23,6 @@
       "@components/*": ["components/*"]
     }
   },
-  "include": ["src/**/*"],                     // 指定包含的文件和文件夹，通常是 `src` 目录
+  "include": ["src/**/*", "main.tsx"],                     // 指定包含的文件和文件夹，通常是 `src` 目录
   "exclude": ["node_modules", "**/*.test.ts", "dist"] // 排除测试文件和打包后的输出文件
 }
