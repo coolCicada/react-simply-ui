@@ -39,20 +39,32 @@ export default function injectGlobalVariablePlugin(src) {
             const globalVariableCode = `globalThis.componentSource = ${JSON.stringify(getContent(), null, 2)};`;
             return `${globalVariableCode}\n${code}`;
         },
+        transformIndexHtml(html) {
+            // 定义你想注入的全局变量
+            const globalVariableCode = `<script>
+                globalThis.componentSource = ${JSON.stringify(getContent())}
+            </script>`;
+
+            // 将脚本插入到 <head> 标签之前
+            return html.replace(
+                /<\/head>/,
+                `${globalVariableCode}\n</head>`
+            );
+        },
         // configResolved(config) {
         //     // 开发环境下设定标志位
         //     if (config.command === 'serve') {
         //         isInjected = false;
         //     }
         // },
-        transform(code, id) {
-            // 只注入到你需要的模块中，或者可以添加其他条件过滤
-            if (id.endsWith('.tsx')) {
-                console.log('transform', id);
-                const globalVariableCode = `globalThis.componentSource = ${JSON.stringify(getContent(), null, 2)};\n`;
-                return `${globalVariableCode}${code}`;
-            }
-            return code;
-        },
+        // transform(code, id) {
+        //     // 只注入到你需要的模块中，或者可以添加其他条件过滤
+        //     console.log('transform', id);
+        //     if (id.endsWith('.tsx')) {
+        //         const globalVariableCode = `globalThis.componentSource = ${JSON.stringify(getContent(), null, 2)};\n`;
+        //         return `${globalVariableCode}${code}`;
+        //     }
+        //     return code;
+        // },
     };
 }
