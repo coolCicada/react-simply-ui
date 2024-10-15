@@ -1,20 +1,24 @@
 import './index.less'; // 引入样式文件
+import { useState } from 'react';
 
 interface TagProps {
   text: string;
-  onClose?: () => void; // 可选的关闭事件
+  closeable?: boolean; // 可选的关闭事件
 }
 
-const Tag: React.FC<TagProps> = ({ text, onClose }) => {
+const Tag: React.FC<TagProps> = ({ text, closeable }) => {
+  const [show, setShow] = useState(true);
   return (
-    <div className="tag">
-      {text}
-      {onClose && (
-        <button className="close-btn" onClick={onClose}>
-          ×
-        </button>
-      )}
-    </div>
+    <>
+      {show && <div className="tag">
+        {text}
+        {closeable && (
+          <button className="close-btn" onClick={() => setShow(false)}>
+            ×
+          </button>
+        )}
+      </div>}
+    </>
   );
 };
 
