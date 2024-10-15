@@ -4,50 +4,41 @@ import path from 'path';
 export default function injectGlobalVariablePlugin(src) {
     function getContent() {
         const componentsDir = path.resolve(__dirname, src);
-
+        const source = {};
         // 递归读取目录中的所有文件
         const readDirectory = (dir) => {
-            const sources = [];
-            const key = dir.split(src)[1];
             const files = fs.readdirSync(dir);
             files.forEach((file) => {
-                let source = { name: file, key };
-                const filePath = path.join(dir, file);
-                const stat = fs.statSync(filePath);
-                if (stat.isDirectory()) {
-                    // 如果是目录，递归调用
-                    source.type = 'dir';
-                    source.children = readDirectory(filePath);
-                } else if (file.endsWith('.tsx')) { // 只读取 .tsx 文件
-                    const content = fs.readFileSync(filePath, 'utf-8');
-                    source.type = 'tsx';
-                    source.content = content;
-                } else if (file.endsWith('.json')) {
-                    const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-                    source.type = 'json';
-                    source.content = content;
-                } else {
-                    source = null;
+                const pathName = path.join(dir, file);
+                const key = pathName.split(componentsDir)[1];
+                if (fs.statSync(pathName).isDirectory()) {
+                    readDirectory(pathName);
+                } else if (pathName.endsWith('.tsx')) { // 只读取 .tsx 文件
+                    const content = fs.readFileSync(pathName, 'utf-8');
+                    source[key] = content;
                 }
-                if (source) sources.push(source);
+                // else if (file.endsWith('.json')) {
+                //     const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+                //     source.type = 'json';
+                //     source.content = content;
+                // }
             });
-            return sources;
         };
-
-        return readDirectory(componentsDir);
+        readDirectory(componentsDir);
+        return source;
     }
     return {
         name: 'vite:inject-global-variable',
         // 生产环境注入
         renderChunk(code) {
-            const globalVariableCode = `globalThis.componentSource = ${JSON.stringify(getContent(), null, 2)};`;
+            const globalVariableCode = `globalThis.componentSource = ${JSON.stringify(getContent(), null, 4)};`;
             return `${globalVariableCode}\n${code}`;
         },
         // dev环境注册到 html 里
         transformIndexHtml(html) {
             // 定义你想注入的全局变量
             const globalVariableCode = `<script>
-                globalThis.componentSource = ${JSON.stringify(getContent())}
+                globalThis.componentSource = ${JSON.stringify(getContent(), null, 4)}
             </script>`;
 
             // 将脚本插入到 <head> 标签之前
