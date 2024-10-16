@@ -21,8 +21,7 @@ const Index = ({ defaultSelectedId = [], children }: { defaultSelectedId: string
     return (
         <Context.Provider value={{ selectId, setSelectId, paths, setPaths }}>
             <IdContext.Provider value={ids}>
-                -- {JSON.stringify(paths)} --
-                <div>{children}</div>
+                <div className="menu">{children}</div>
             </IdContext.Provider>
         </Context.Provider>
     )
@@ -34,7 +33,6 @@ export const MenuItem = ({ name = '?', children }) => {
     useEffect(() => {
         if (selectId.includes(name)) {
             setPaths(pre => {
-                console.log('pre:', pre);
                 return [...pre, ...ids]
             });
         }
@@ -45,7 +43,7 @@ export const MenuItem = ({ name = '?', children }) => {
                 setPaths([]);
                 setSelectId([name])
             }}>
-                {children} - ids: {JSON.stringify(ids)}
+                {children}
             </div>
         </div>
     )
@@ -62,7 +60,10 @@ export const SumMenu = ({ name = "", title = '', children }) => {
     return (
         <IdContext.Provider value={[...ids, name]}>
             <div className={cn('sub-menu')}>
-                <div className={cn({ selected })}>{title}-----------<span onClick={() => setOpen(!open)}>here</span></div>
+                <div className={cn('title', { selected })}>
+                    <span>{title}</span>
+                    <span className={cn({ 't-180': open })} onClick={() => setOpen(!open)}>^</span>
+                </div>
                 <div className={cn('sub-menu-content', { 'sub-menu-open': open })}>
                     {children}
                 </div>
