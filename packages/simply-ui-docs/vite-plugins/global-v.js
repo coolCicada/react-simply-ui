@@ -10,18 +10,16 @@ export default function injectGlobalVariablePlugin(src) {
             const files = fs.readdirSync(dir);
             files.forEach((file) => {
                 const pathName = path.join(dir, file);
-                const key = pathName.split(componentsDir)[1];
+                const key = dir.split(componentsDir)[1];
                 if (fs.statSync(pathName).isDirectory()) {
                     readDirectory(pathName);
                 } else if (pathName.endsWith('.tsx')) { // 只读取 .tsx 文件
                     const content = fs.readFileSync(pathName, 'utf-8');
-                    source[key] = content;
+                    source[key] = { ...source[key], code: content };
+                } else if (file.endsWith('.json')) {
+                    const content = JSON.parse(fs.readFileSync(pathName, 'utf-8'));
+                    source[key] = { ...source[key], info: content };
                 }
-                // else if (file.endsWith('.json')) {
-                //     const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-                //     source.type = 'json';
-                //     source.content = content;
-                // }
             });
         };
         readDirectory(componentsDir);

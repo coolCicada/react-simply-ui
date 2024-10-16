@@ -32,5 +32,9 @@
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "prism-react-renderer": "^2.4.0",
+    "react-syntax-highlighter": "^15.6.0"
   }
 }
