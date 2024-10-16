@@ -2,20 +2,26 @@ import { createContext, Dispatch, ReactElement, SetStateAction, useContext, useE
 import cn from 'classnames';
 import './index.less';
 
-interface ContextProps { selectId: string[]; setSelectId: Dispatch<SetStateAction<string[]>> }
+interface ContextProps {
+    selectId: string[];
+    setSelectId: Dispatch<SetStateAction<string[]>>;
+    paths: string[];
+    setPaths: Dispatch<SetStateAction<string[]>>;
+}
 
-const Context = createContext<ContextProps>({ selectId: [], setSelectId: () => {} });
+const Context = createContext<ContextProps>({ selectId: [], setSelectId: () => { }, paths: [], setPaths: () => {} });
 const IdContext = createContext<any[]>([]);
-const Index = ({ defaultSelectedId = [], children }: { defaultSelectedId : string[], children: ReactElement | ReactElement[]}) => {
+const Index = ({ defaultSelectedId = [], children }: { defaultSelectedId: string[], children: ReactElement | ReactElement[] }) => {
     const [selectId, setSelectId] = useState<string[]>([]);
+    const [paths, setPaths] = useState<string[]>([]);
     useEffect(() => {
         setSelectId(defaultSelectedId);
     }, [defaultSelectedId])
     const [ids] = useState([]);
     return (
-        <Context.Provider value={{ selectId, setSelectId }}>
+        <Context.Provider value={{ selectId, setSelectId, paths, setPaths }}>
             <IdContext.Provider value={ids}>
-                -- {JSON.stringify(selectId)} --
+                -- {JSON.stringify(paths)} --
                 <div>{children}</div>
             </IdContext.Provider>
         </Context.Provider>
@@ -23,17 +29,22 @@ const Index = ({ defaultSelectedId = [], children }: { defaultSelectedId : strin
 }
 
 export const MenuItem = ({ name = '?', children }) => {
-    const { selectId, setSelectId } = useContext(Context);
+    const { selectId, setSelectId, setPaths } = useContext(Context);
     const ids = useContext(IdContext);
-    const last = selectId[selectId.length - 1];
     useEffect(() => {
-        if (name === last) {
-            setSelectId([...ids, name]);
+        if (selectId.includes(name)) {
+            setPaths(pre => {
+                console.log('pre:', pre);
+                return [...pre, ...ids]
+            });
         }
-    }, [last]);
+    }, [selectId]);
     return (
         <div className="menu-item">
-            <div className={cn({ selected: selectId.includes(name) })} onClick={() => setSelectId([...ids, name])}>
+            <div className={cn({ selected: selectId.includes(name) })} onClick={() => {
+                setPaths([]);
+                setSelectId([name])
+            }}>
                 {children} - ids: {JSON.stringify(ids)}
             </div>
         </div>
@@ -43,16 +54,16 @@ export const MenuItem = ({ name = '?', children }) => {
 export const SumMenu = ({ name = "", title = '', children }) => {
     const [open, setOpen] = useState(false);
     const ids = useContext(IdContext);
-    const { selectId } = useContext(Context);
-    const selected = selectId.includes(name);
+    const { paths } = useContext(Context);
+    const selected = paths.includes(name);
     useEffect(() => {
-        setOpen(selected);
-    }, [selected]);
+        if (!open) setOpen(selected);
+    }, [paths]);
     return (
         <IdContext.Provider value={[...ids, name]}>
             <div className={cn('sub-menu')}>
                 <div className={cn({ selected })}>{title}-----------<span onClick={() => setOpen(!open)}>here</span></div>
-                <div className={cn('sub-menu-content', {'sub-menu-open': open })}>
+                <div className={cn('sub-menu-content', { 'sub-menu-open': open })}>
                     {children}
                 </div>
             </div>

@@ -22,7 +22,7 @@ const App = () => {
                 }}>see</button>
             </div>
             <div className='p-4'>
-                <Menu defaultSelectedId={["5"]}>
+                <Menu defaultSelectedId={["5", "1"]}>
                     <SumMenu name="one" title="one">
                         <MenuItem name="1">1</MenuItem>
                     </SumMenu>
