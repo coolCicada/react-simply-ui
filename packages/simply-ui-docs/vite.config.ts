@@ -3,10 +3,12 @@ import react from "@vitejs/plugin-react";
 import reads from './vite-plugins/reads';
 import globalV from './vite-plugins/global-v';
 import path from 'path';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   plugins: [
     react(),
+    dts(),
     reads(path.resolve() + '/src'),
     globalV(path.resolve() + '/src/components')
   ],
