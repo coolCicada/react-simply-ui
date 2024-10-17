@@ -38,6 +38,7 @@
     "postcss": "^8.4.47",
     "react-simply-ui": "*",
     "simply-ui-docs": "*",
+    "doc-simply-ui": "*",
     "tailwindcss": "^3.4.13",
     "vite-plugin-dts": "^4.2.3",
     "vite-plugin-static-copy": "^2.0.0"
