@@ -3,12 +3,17 @@ import mdx from '@mdx-js/rollup';
 import codeImport from 'remark-code-import';
 import react from "@vitejs/plugin-react";
 import dts from 'vite-plugin-dts';
+import cssPrefixPlugin from './vite-plugins/prefix-plugin';
 
 export default defineConfig({
   plugins: [
     {enforce: 'pre', ...mdx({/* jsxImportSource: …, otherOptions… */remarkPlugins: [codeImport]})},
     react(),
     dts(),
+    cssPrefixPlugin({
+      filePattern: '/src/markdown',
+      prefix: '.ls-only'
+    })
   ],
   build: {
     outDir: "dist", // 指定输出目录
