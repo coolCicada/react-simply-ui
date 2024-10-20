@@ -17,7 +17,7 @@
     "declaration": true,           // 生成声明文件
     "declarationDir": "./dist/es",   // 指定声明文件输出目录
     "paths": {                                 // 自定义路径别名
-      "@components/*": ["components/*"]
+      "@/*": ["src/*"]
     }
   },
   "include": ["src/**/*"],                     // 指定包含的文件和文件夹，通常是 `src` 目录

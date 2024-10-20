@@ -1,0 +1,838 @@
+{
+    "type": "root",
+    "children": [
+        {
+            "type": "mdxjsEsm",
+            "value": "import Size from './Size';\nimport ComponentWrapper from '@/components/ComponentWrapper';\nimport SimpleC from './Simple?raw';\nimport Index4 from '././Simple/index.tsx';\nimport Index5 from '././Size/index.tsx';",
+            "position": {
+                "start": {
+                    "line": 1,
+                    "column": 1,
+                    "offset": 0
+                },
+                "end": {
+                    "line": 3,
+                    "column": 36,
+                    "offset": 124
+                }
+            },
+            "data": {
+                "estree": {
+                    "type": "Program",
+                    "start": 0,
+                    "end": 124,
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0,
+                            "offset": 0
+                        },
+                        "end": {
+                            "line": 3,
+                            "column": 35,
+                            "offset": 124
+                        }
+                    },
+                    "body": [
+                        {
+                            "type": "ImportDeclaration",
+                            "start": 0,
+                            "end": 26,
+                            "loc": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 0,
+                                    "offset": 0
+                                },
+                                "end": {
+                                    "line": 1,
+                                    "column": 26,
+                                    "offset": 26
+                                }
+                            },
+                            "specifiers": [
+                                {
+                                    "type": "ImportDefaultSpecifier",
+                                    "start": 7,
+                                    "end": 11,
+                                    "loc": {
+                                        "start": {
+                                            "line": 1,
+                                            "column": 7,
+                                            "offset": 7
+                                        },
+                                        "end": {
+                                            "line": 1,
+                                            "column": 11,
+                                            "offset": 11
+                                        }
+                                    },
+                                    "local": {
+                                        "type": "Identifier",
+                                        "start": 7,
+                                        "end": 11,
+                                        "loc": {
+                                            "start": {
+                                                "line": 1,
+                                                "column": 7,
+                                                "offset": 7
+                                            },
+                                            "end": {
+                                                "line": 1,
+                                                "column": 11,
+                                                "offset": 11
+                                            }
+                                        },
+                                        "name": "Size",
+                                        "range": [
+                                            7,
+                                            11
+                                        ]
+                                    },
+                                    "range": [
+                                        7,
+                                        11
+                                    ]
+                                }
+                            ],
+                            "source": {
+                                "type": "Literal",
+                                "start": 17,
+                                "end": 25,
+                                "loc": {
+                                    "start": {
+                                        "line": 1,
+                                        "column": 17,
+                                        "offset": 17
+                                    },
+                                    "end": {
+                                        "line": 1,
+                                        "column": 25,
+                                        "offset": 25
+                                    }
+                                },
+                                "value": "./Size",
+                                "raw": "'./Size'",
+                                "range": [
+                                    17,
+                                    25
+                                ]
+                            },
+                            "range": [
+                                0,
+                                26
+                            ]
+                        },
+                        {
+                            "type": "ImportDeclaration",
+                            "start": 27,
+                            "end": 88,
+                            "loc": {
+                                "start": {
+                                    "line": 2,
+                                    "column": 0,
+                                    "offset": 27
+                                },
+                                "end": {
+                                    "line": 2,
+                                    "column": 61,
+                                    "offset": 88
+                                }
+                            },
+                            "specifiers": [
+                                {
+                                    "type": "ImportDefaultSpecifier",
+                                    "start": 34,
+                                    "end": 50,
+                                    "loc": {
+                                        "start": {
+                                            "line": 2,
+                                            "column": 7,
+                                            "offset": 34
+                                        },
+                                        "end": {
+                                            "line": 2,
+                                            "column": 23,
+                                            "offset": 50
+                                        }
+                                    },
+                                    "local": {
+                                        "type": "Identifier",
+                                        "start": 34,
+                                        "end": 50,
+                                        "loc": {
+                                            "start": {
+                                                "line": 2,
+                                                "column": 7,
+                                                "offset": 34
+                                            },
+                                            "end": {
+                                                "line": 2,
+                                                "column": 23,
+                                                "offset": 50
+                                            }
+                                        },
+                                        "name": "ComponentWrapper",
+                                        "range": [
+                                            34,
+                                            50
+                                        ]
+                                    },
+                                    "range": [
+                                        34,
+                                        50
+                                    ]
+                                }
+                            ],
+                            "source": {
+                                "type": "Literal",
+                                "start": 56,
+                                "end": 87,
+                                "loc": {
+                                    "start": {
+                                        "line": 2,
+                                        "column": 29,
+                                        "offset": 56
+                                    },
+                                    "end": {
+                                        "line": 2,
+                                        "column": 60,
+                                        "offset": 87
+                                    }
+                                },
+                                "value": "@/components/ComponentWrapper",
+                                "raw": "'@/components/ComponentWrapper'",
+                                "range": [
+                                    56,
+                                    87
+                                ]
+                            },
+                            "range": [
+                                27,
+                                88
+                            ]
+                        },
+                        {
+                            "type": "ImportDeclaration",
+                            "start": 89,
+                            "end": 124,
+                            "loc": {
+                                "start": {
+                                    "line": 3,
+                                    "column": 0,
+                                    "offset": 89
+                                },
+                                "end": {
+                                    "line": 3,
+                                    "column": 35,
+                                    "offset": 124
+                                }
+                            },
+                            "specifiers": [
+                                {
+                                    "type": "ImportDefaultSpecifier",
+                                    "start": 96,
+                                    "end": 103,
+                                    "loc": {
+                                        "start": {
+                                            "line": 3,
+                                            "column": 7,
+                                            "offset": 96
+                                        },
+                                        "end": {
+                                            "line": 3,
+                                            "column": 14,
+                                            "offset": 103
+                                        }
+                                    },
+                                    "local": {
+                                        "type": "Identifier",
+                                        "start": 96,
+                                        "end": 103,
+                                        "loc": {
+                                            "start": {
+                                                "line": 3,
+                                                "column": 7,
+                                                "offset": 96
+                                            },
+                                            "end": {
+                                                "line": 3,
+                                                "column": 14,
+                                                "offset": 103
+                                            }
+                                        },
+                                        "name": "SimpleC",
+                                        "range": [
+                                            96,
+                                            103
+                                        ]
+                                    },
+                                    "range": [
+                                        96,
+                                        103
+                                    ]
+                                }
+                            ],
+                            "source": {
+                                "type": "Literal",
+                                "start": 109,
+                                "end": 123,
+                                "loc": {
+                                    "start": {
+                                        "line": 3,
+                                        "column": 20,
+                                        "offset": 109
+                                    },
+                                    "end": {
+                                        "line": 3,
+                                        "column": 34,
+                                        "offset": 123
+                                    }
+                                },
+                                "value": "./Simple?raw",
+                                "raw": "'./Simple?raw'",
+                                "range": [
+                                    109,
+                                    123
+                                ]
+                            },
+                            "range": [
+                                89,
+                                124
+                            ]
+                        },
+                        {
+                            "type": "ImportDeclaration",
+                            "specifiers": [
+                                {
+                                    "type": "ImportDefaultSpecifier",
+                                    "local": {
+                                        "type": "Identifier",
+                                        "name": "Index4"
+                                    }
+                                }
+                            ],
+                            "source": {
+                                "type": "Literal",
+                                "value": "./Simple/index.tsx"
+                            }
+                        },
+                        {
+                            "type": "ImportDeclaration",
+                            "specifiers": [
+                                {
+                                    "type": "ImportDefaultSpecifier",
+                                    "local": {
+                                        "type": "Identifier",
+                                        "name": "Index5"
+                                    }
+                                }
+                            ],
+                            "source": {
+                                "type": "Literal",
+                                "value": "./Size/index.tsx"
+                            }
+                        }
+                    ],
+                    "sourceType": "module",
+                    "comments": [],
+                    "range": [
+                        0,
+                        124
+                    ]
+                }
+            }
+        },
+        {
+            "type": "heading",
+            "depth": 2,
+            "children": [
+                {
+                    "type": "text",
+                    "value": "Button",
+                    "position": {
+                        "start": {
+                            "line": 5,
+                            "column": 4,
+                            "offset": 129
+                        },
+                        "end": {
+                            "line": 5,
+                            "column": 10,
+                            "offset": 135
+                        }
+                    }
+                }
+            ],
+            "position": {
+                "start": {
+                    "line": 5,
+                    "column": 1,
+                    "offset": 126
+                },
+                "end": {
+                    "line": 5,
+                    "column": 10,
+                    "offset": 135
+                }
+            }
+        },
+        {
+            "type": "heading",
+            "depth": 3,
+            "children": [
+                {
+                    "type": "text",
+                    "value": "基础使用",
+                    "position": {
+                        "start": {
+                            "line": 7,
+                            "column": 5,
+                            "offset": 141
+                        },
+                        "end": {
+                            "line": 7,
+                            "column": 9,
+                            "offset": 145
+                        }
+                    }
+                }
+            ],
+            "position": {
+                "start": {
+                    "line": 7,
+                    "column": 1,
+                    "offset": 137
+                },
+                "end": {
+                    "line": 7,
+                    "column": 9,
+                    "offset": 145
+                }
+            }
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "type": "text",
+                    "value": "基本使用",
+                    "position": {
+                        "start": {
+                            "line": 9,
+                            "column": 5,
+                            "offset": 151
+                        },
+                        "end": {
+                            "line": 9,
+                            "column": 9,
+                            "offset": 155
+                        }
+                    }
+                }
+            ],
+            "position": {
+                "start": {
+                    "line": 9,
+                    "column": 5,
+                    "offset": 151
+                },
+                "end": {
+                    "line": 9,
+                    "column": 9,
+                    "offset": 155
+                }
+            }
+        },
+        {
+            "type": "mdxJsxFlowElement",
+            "name": "div",
+            "attributes": [
+                {
+                    "type": "mdxJsxAttribute",
+                    "name": "src",
+                    "value": "./Simple/index.tsx",
+                    "position": {
+                        "start": {
+                            "line": 11,
+                            "column": 7,
+                            "offset": 163
+                        },
+                        "end": {
+                            "line": 11,
+                            "column": 33,
+                            "offset": 189
+                        }
+                    }
+                }
+            ],
+            "children": [
+                {
+                    "type": "mdxJsxFlowElement",
+                    "name": "Index4"
+                },
+                {
+                    "type": "span",
+                    "attributes": [
+                        {
+                            "type": "mdxJsxAttribute",
+                            "name": "style",
+                            "value": "color: red;"
+                        }
+                    ],
+                    "value": "import { Button } from 'react-simply-ui';\n\nconst Simple = () => {\n    return (\n        <div>\n            <Button label='Simple'/>\n        </div>\n    )\n}\n\nexport default Simple;"
+                }
+            ],
+            "position": {
+                "start": {
+                    "line": 11,
+                    "column": 1,
+                    "offset": 157
+                },
+                "end": {
+                    "line": 11,
+                    "column": 36,
+                    "offset": 192
+                }
+            },
+            "data": {
+                "_mdxExplicitJsx": true
+            }
+        },
+        {
+            "type": "mdxJsxFlowElement",
+            "name": "div",
+            "attributes": [
+                {
+                    "type": "mdxJsxAttribute",
+                    "name": "a",
+                    "value": "123",
+                    "position": {
+                        "start": {
+                            "line": 13,
+                            "column": 6,
+                            "offset": 199
+                        },
+                        "end": {
+                            "line": 13,
+                            "column": 13,
+                            "offset": 206
+                        }
+                    }
+                },
+                {
+                    "type": "mdxJsxAttribute",
+                    "name": "style",
+                    "value": {
+                        "type": "mdxJsxAttributeValueExpression",
+                        "value": "{ color: 'blue' }",
+                        "data": {
+                            "estree": {
+                                "type": "Program",
+                                "start": 214,
+                                "end": 231,
+                                "body": [
+                                    {
+                                        "type": "ExpressionStatement",
+                                        "expression": {
+                                            "type": "ObjectExpression",
+                                            "start": 214,
+                                            "end": 231,
+                                            "loc": {
+                                                "start": {
+                                                    "line": 13,
+                                                    "column": 20,
+                                                    "offset": 214
+                                                },
+                                                "end": {
+                                                    "line": 13,
+                                                    "column": 37,
+                                                    "offset": 231
+                                                }
+                                            },
+                                            "properties": [
+                                                {
+                                                    "type": "Property",
+                                                    "start": 216,
+                                                    "end": 229,
+                                                    "loc": {
+                                                        "start": {
+                                                            "line": 13,
+                                                            "column": 22,
+                                                            "offset": 216
+                                                        },
+                                                        "end": {
+                                                            "line": 13,
+                                                            "column": 35,
+                                                            "offset": 229
+                                                        }
+                                                    },
+                                                    "method": false,
+                                                    "shorthand": false,
+                                                    "computed": false,
+                                                    "key": {
+                                                        "type": "Identifier",
+                                                        "start": 216,
+                                                        "end": 221,
+                                                        "loc": {
+                                                            "start": {
+                                                                "line": 13,
+                                                                "column": 22,
+                                                                "offset": 216
+                                                            },
+                                                            "end": {
+                                                                "line": 13,
+                                                                "column": 27,
+                                                                "offset": 221
+                                                            }
+                                                        },
+                                                        "name": "color",
+                                                        "range": [
+                                                            216,
+                                                            221
+                                                        ]
+                                                    },
+                                                    "value": {
+                                                        "type": "Literal",
+                                                        "start": 223,
+                                                        "end": 229,
+                                                        "loc": {
+                                                            "start": {
+                                                                "line": 13,
+                                                                "column": 29,
+                                                                "offset": 223
+                                                            },
+                                                            "end": {
+                                                                "line": 13,
+                                                                "column": 35,
+                                                                "offset": 229
+                                                            }
+                                                        },
+                                                        "value": "blue",
+                                                        "raw": "'blue'",
+                                                        "range": [
+                                                            223,
+                                                            229
+                                                        ]
+                                                    },
+                                                    "kind": "init",
+                                                    "range": [
+                                                        216,
+                                                        229
+                                                    ]
+                                                }
+                                            ],
+                                            "range": [
+                                                214,
+                                                231
+                                            ]
+                                        },
+                                        "start": 214,
+                                        "end": 231,
+                                        "loc": {
+                                            "start": {
+                                                "line": 13,
+                                                "column": 20,
+                                                "offset": 214
+                                            },
+                                            "end": {
+                                                "line": 13,
+                                                "column": 37,
+                                                "offset": 231
+                                            }
+                                        },
+                                        "range": [
+                                            214,
+                                            231
+                                        ]
+                                    }
+                                ],
+                                "sourceType": "module",
+                                "comments": [],
+                                "loc": {
+                                    "start": {
+                                        "line": 13,
+                                        "column": 20,
+                                        "offset": 214
+                                    },
+                                    "end": {
+                                        "line": 13,
+                                        "column": 37,
+                                        "offset": 231
+                                    }
+                                },
+                                "range": [
+                                    214,
+                                    231
+                                ]
+                            }
+                        }
+                    },
+                    "position": {
+                        "start": {
+                            "line": 13,
+                            "column": 14,
+                            "offset": 207
+                        },
+                        "end": {
+                            "line": 13,
+                            "column": 39,
+                            "offset": 232
+                        }
+                    }
+                }
+            ],
+            "children": [
+                {
+                    "type": "paragraph",
+                    "children": [
+                        {
+                            "type": "text",
+                            "value": "12345",
+                            "position": {
+                                "start": {
+                                    "line": 14,
+                                    "column": 5,
+                                    "offset": 238
+                                },
+                                "end": {
+                                    "line": 14,
+                                    "column": 10,
+                                    "offset": 243
+                                }
+                            }
+                        }
+                    ],
+                    "position": {
+                        "start": {
+                            "line": 14,
+                            "column": 5,
+                            "offset": 238
+                        },
+                        "end": {
+                            "line": 14,
+                            "column": 10,
+                            "offset": 243
+                        }
+                    }
+                }
+            ],
+            "position": {
+                "start": {
+                    "line": 13,
+                    "column": 1,
+                    "offset": 194
+                },
+                "end": {
+                    "line": 15,
+                    "column": 7,
+                    "offset": 250
+                }
+            },
+            "data": {
+                "_mdxExplicitJsx": true
+            }
+        },
+        {
+            "type": "heading",
+            "depth": 3,
+            "children": [
+                {
+                    "type": "text",
+                    "value": "尺寸",
+                    "position": {
+                        "start": {
+                            "line": 17,
+                            "column": 5,
+                            "offset": 256
+                        },
+                        "end": {
+                            "line": 17,
+                            "column": 7,
+                            "offset": 258
+                        }
+                    }
+                }
+            ],
+            "position": {
+                "start": {
+                    "line": 17,
+                    "column": 1,
+                    "offset": 252
+                },
+                "end": {
+                    "line": 17,
+                    "column": 7,
+                    "offset": 258
+                }
+            }
+        },
+        {
+            "type": "mdxJsxFlowElement",
+            "name": "div",
+            "attributes": [
+                {
+                    "type": "mdxJsxAttribute",
+                    "name": "src",
+                    "value": "./Size/index.tsx",
+                    "position": {
+                        "start": {
+                            "line": 19,
+                            "column": 7,
+                            "offset": 266
+                        },
+                        "end": {
+                            "line": 19,
+                            "column": 31,
+                            "offset": 290
+                        }
+                    }
+                }
+            ],
+            "children": [
+                {
+                    "type": "mdxJsxFlowElement",
+                    "name": "Index5"
+                },
+                {
+                    "type": "span",
+                    "attributes": [
+                        {
+                            "type": "mdxJsxAttribute",
+                            "name": "style",
+                            "value": "color: red;"
+                        }
+                    ],
+                    "value": "import { Button } from 'react-simply-ui';\n\nconst Size = () => {\n    return (\n        <div className='space-x-4'>\n            <Button label='Simple' size='big' />\n            <Button label='Simple' size='small' />\n            <Button label='Simple' size='normal' />\n        </div>\n    )\n}\n\nexport default Size;"
+                }
+            ],
+            "position": {
+                "start": {
+                    "line": 19,
+                    "column": 1,
+                    "offset": 260
+                },
+                "end": {
+                    "line": 19,
+                    "column": 34,
+                    "offset": 293
+                }
+            },
+            "data": {
+                "_mdxExplicitJsx": true
+            }
+        }
+    ],
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 20,
+            "column": 1,
+            "offset": 294
+        }
+    }
+}

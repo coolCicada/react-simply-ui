@@ -23,6 +23,7 @@
     "postcss": "^8.4.47",
     "postcss-prefix-selector": "^2.1.0",
     "postcss-prefixer": "^3.0.0",
-    "react-syntax-highlighter": "^15.6.0"
+    "react-syntax-highlighter": "^15.6.0",
+    "unist-util-visit": "^5.0.0"
   }
 }

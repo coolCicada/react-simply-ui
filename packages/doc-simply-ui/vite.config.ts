@@ -4,10 +4,12 @@ import codeImport from 'remark-code-import';
 import react from "@vitejs/plugin-react";
 import dts from 'vite-plugin-dts';
 import cssPrefixPlugin from './vite-plugins/prefix-plugin';
+import path from "path";
+import mdxPlugin from './vite-plugins/mdx-plugin';
 
 export default defineConfig({
   plugins: [
-    {enforce: 'pre', ...mdx({/* jsxImportSource: …, otherOptions… */remarkPlugins: [codeImport]})},
+    {enforce: 'pre', ...mdx({/* jsxImportSource: …, otherOptions… */remarkPlugins: [codeImport, mdxPlugin]})},
     react(),
     dts(),
     cssPrefixPlugin({
@@ -32,6 +34,11 @@ export default defineConfig({
           "react-dom": "ReactDOM",
         },
       },
+    },
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'), // 将 '@' 指向 'src' 目录
     },
   },
 });

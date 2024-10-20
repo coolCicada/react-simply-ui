@@ -2,7 +2,7 @@ import { Button } from 'react-simply-ui';
 
 const Simple = () => {
     return (
-        <div className='my-2'>
+        <div>
             <Button label='Simple'/>
         </div>
     )
