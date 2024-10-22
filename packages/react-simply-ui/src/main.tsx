@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import { Form } from './index';
+import { Button, Form } from './index';
 import Menu, { MenuItem, SumMenu } from './Menu';
 import './main.less';
 const Item = Form.Item;
@@ -10,16 +10,31 @@ const App = () => {
         <div className='space-y-2 min-h-screen p-4'>
             <div className='border p-4'>
                 <Form form={form}>
-                    <Item name="one">
-                        <input placeholder='请输入'/>
+                    <Item name="one" label="Item1" rules={[
+                        {
+                            required: true,
+                            message: 'one 必填'
+                        }
+                    ]}>
+                        <input placeholder='请输入' />
                     </Item>
-                    <Item name="two">
-                        <input placeholder='请输入'/>
+                    <Item name="two" label="Item2" rules={[
+                        {
+                            required: true,
+                            message: 'two 必填'
+                        }
+                    ]}>
+                        <input placeholder='请输入' />
                     </Item>
                 </Form>
-                <button onClick={() => {
+                <Button label='打印表单' onClick={() => {
                     console.log('form:', form.getFieldsValue());
-                }}>see</button>
+                }} />
+                <br />
+                <Button label='校验错误' onClick={async () => {
+                    const res = await form.validate();
+                    console.log('errors:', res);
+                }} />
             </div>
             <div className='p-4'>
                 <Menu defaultSelectedId={["5", "1"]}>

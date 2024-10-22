@@ -25,5 +25,8 @@
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "async-validator": "^4.2.5"
   }
 }
